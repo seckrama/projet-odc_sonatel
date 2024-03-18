@@ -1,0 +1,54 @@
+.container{
+    display: block;
+    width: 50%;
+    border: 3px solid rgb(29, 107, 46);
+    margin: auto;
+   
+
+}
+.container .header{
+background-color: rgb(206, 124, 16);
+
+height: 100PX;
+font-size: 30px;
+font-family: bo;font-weight: bolder;
+
+}
+.container .main{
+    background-color: blue;
+   margin-top: -30px;
+
+}
+.content{
+   background-color: red;
+   padding: 200px;
+   border: 2px solid rgb(24, 114, 39);
+   margin-top: 15px;
+   margin-left: 15px;
+   margin-right: 10px;
+}
+.content h1{
+    position: relative;
+    right: 200px;
+    top: -220px;
+}
+.footer{
+
+   margin-top: 15px;
+   border-top: 2px solid rgb(21, 114, 21);
+   background-color: rgb(218, 139, 22);
+
+   height: 100PX;
+
+
+}
+.menu a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    margin-left: 10px;
+}
+.menu1 a{
+    text-decoration: none;
+    text-align: 20px;
+}

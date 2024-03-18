@@ -1,0 +1,118 @@
+.container{
+   
+    border: 3px solid rgb(22, 107, 43);
+   
+   
+
+}
+.container .header{
+   background-color: rgb(190, 88, 19);
+height: 100%;
+height: 100px;
+
+
+}
+
+
+.content{
+   background-color: rgb(11, 80, 34);
+   width: 90%;
+   height: 600px;
+   overflow: hidden; /*empeche les block de se deplacer*/
+   margin-top: 15px;
+   margin-left: 60px;
+ 
+}
+
+
+.content1, .content2, .content3{
+    float: left;
+    width: 50%;
+    height: 50%;
+    margin: 2px 0px 2px 0px;
+}
+.content .content1{
+    background-color: red;
+    overflow: hidden;
+
+
+}
+ .cont, .cont1 , .cont2 , .cont3{
+
+   width: 40%;
+   float: left;
+   height: 100px;
+   color:rgb(173, 168, 168);
+   border: 2px solid rgb(22, 126, 39);
+   
+  
+
+
+}
+.cont{
+    background-color: rgb(184, 179, 179);
+    margin-bottom: 97px;
+    margin-left: 10px;
+  
+    
+     
+ 
+    
+}
+.cont1{
+    background-color: rgb(173, 168, 168);
+    margin-bottom: 97px;
+    margin-left: 60px;
+ 
+    
+
+}
+.cont2{
+    background-color: rgb(156, 147, 147);
+    margin-left: 10px;
+    margin-top: -30px;
+}
+.cont3{
+    background-color:rgb(163, 161, 161);
+    margin-left: 60px;
+    margin-top: -30px;
+}
+
+
+.content .content2{
+    background-color: rgb(88, 86, 86);
+    overflow: hidden;
+
+    
+
+}
+.content .content3{
+    background-color: rgb(112, 4, 89);
+    overflow: hidden;
+   
+}
+.content3 .cont2,.content3 .cont3{
+    
+    margin-top: 80px;
+}
+.footer{
+
+   margin-top: 15px;
+   border-top: 1px solid rgb(41, 134, 29);
+   background-color: rgb(190, 88, 19);
+   height: 100%;
+   height: 100px;
+
+
+
+}
+.menu{
+    background-color: blue;
+    margin-top: -30px;
+    height: 50px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+   
+}

@@ -1,0 +1,97 @@
+.container{
+   
+}
+.cont{
+    background-color: rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20%;
+    height: 300px;
+    margin: 500px;
+    border-radius: 190px 0px 190px 0px;
+
+} 
+.cont1{
+    background-color: rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -820px;
+    left: 710px;
+
+}
+.cont2{
+    background-color:rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -860px;
+    left: 750px;
+
+}
+.cont3{
+    background-color:rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -900px;
+    left: 790px;
+
+}
+.cont4{
+    background-color:rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -636px;
+    left: 530px;
+
+}
+.cont5{
+    background-color:rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -675px;
+    left: 570px;
+
+}
+.cont6{
+    background-color:rgb(155, 154, 154);
+    background-attachment: fixed;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 600px 600px 600px 600px;
+    position: relative;
+    top: -718px;
+    left: 609px;
+
+}
+.cont1,.cont2,.cont3{
+    position: relative;
+  
+
+
+}
+.cont4,.cont5,.cont6{
+
+
+}

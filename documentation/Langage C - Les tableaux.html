@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="copyright" content="1998 by Jean-François Pillou">
+<meta name="ROBOTS" content="all">
+<meta name="author" content="Jean-François Pillou">
+<meta name="subject" content="Le langage C">
+<meta name="topic" content="Tableaux C">
+<meta name="keywords" content="Langage C, tableau, Tableau, tableaux, Tableaux">
+<meta name="title" content="Langage C - Les tableaux">
+<title>Langage C - Les tableaux</title>
+<link rel="stylesheet" href="Langage%20C%20-%20Les%20tableaux_fichiers/ccm.css" type="text/css">
+
+
+
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualité informatique" href="http://www.commentcamarche.net/rss/actualite.php3">
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualités du site CommentCaMarche.net" href="http://www.commentcamarche.net/rss/rss.php3">
+</head>
+
+
+<body>
+
+<table class="ccmmain">
+<tbody><tr>
+<td height="1" width="170"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="540"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="12"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="10"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="#AEBFE2" style="vertical-align:top;text-align:left;height:46;background-color:#AEBFE2;">
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+    <td style="vertical-align:top;"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm" target="_top"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/logotop.png" border="0" width="328" height="42" title="Comment Ca Marche - Communauté informatique" alt="Comment Ca Marche - Communauté informatique"></a></td>
+    <td style="width:30px">&nbsp;</td>
+    <td style="vertical-align:middle;text-align:left"></td></tr>
+</tbody></table>
+</td>
+<td style="background-color: #AEBFE2; vertical-align:bottom;">&nbsp;</td>
+<td style="background-color: #AEBFE2;">&nbsp;</td>
+</tr>
+
+<tr>
+<td bgcolor="#8EA6D6"><div id="ccmicons"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/icohome2.gif" name="icohome" alt="Accueil - Encyclopédie informatique" title="Accueil - Encyclopédie informatique" width="24" border="0"></a><a href="http://www.commentcamarche.net/encyclopedie"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/icozip2.gif" name="icozip" alt="Télécharger l'encyclopédie" title="Télécharger l'encyclopédie" width="24" border="0"></a><a href="http://www.commentcamarche.net/ccmbugs/?Bug_url=%2Fc%2Fctab.php3#ecrire"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/icowri2.gif" name="icowri" alt="Contribuer à cet article" width="24" border="0"></a><a href="http://www.commentcamarche.net/contact/"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/icomail2.gif" name="icomail" alt="" title="Ecrire à Jean-Francois Pillou" width="24" border="0"></a></div></td>
+<td colspan="3" bgcolor="#8EA6D6"></td>
+</tr>
+
+<tr>
+<td height="1"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1" rowspan="2"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/pixel_white.png" height="1" width="12" alt=""></td>
+
+<td bgcolor="#FFFFFF" height="100%" valign="top" rowspan="2">
+</td>
+</tr>
+
+<tr><td valign="top" colspan="3"><div id="contenu"><h1> Langage C - Les tableaux</h1><table border="0" cellpadding="0" cellspacing="0" width="722">
+	<tbody><tr>
+		<td><img src="Langage%20C%20-%20Les%20tableaux_fichiers/ctab.gif" alt="Tableaux en langage C"></td>
+		<td valign="top" width="38"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cfonc.htm"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/bckward.gif" border="0" width="38" height="63" alt=""></a></td>
+				<td valign="top" width="63"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/logoPClw.gif" alt="Encyclopédie" height="60" width="63" border="0"></a></td>
+		</tr>
+</tbody></table>
+<br><div id="CCMmenu">
+<table width="156">
+<tbody><tr><th>Langage C</th></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cintro.htm">Langage C</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/ccarac.htm">Caractéristiques</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cpreproc.htm">Préprocesseur</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/ctype.htm">Types de données</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cvar.htm">Les variables</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cop.htm">Les opérateurs</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/ccond.htm">Structures conditionnelles</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cfonc.htm">Les fonctions</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/ctab.htm">Les tableaux</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cstruct.htm">Les structures</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cpoint.htm">Les pointeurs</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cstring.htm">Chaîne de caractères</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cliste.htm">Listes chaînées</a></td></tr>
+</tbody></table></div>
+<hr>
+
+<a name="complexes" class="ancre"></a><h2>Type de données complexes</h2>
+
+<p align="justify">Les variables, telles que nous les avons vues, ne permettent de stocker qu'une seule
+donnée à la fois. Or,  pour de nombreuses données, comme cela est souvent
+le cas, des variables distinctes seraient beaucoup trop lourdes à gérer.
+Heureusement, le langage C propose des structures de données permettant de stocker
+l'ensemble de ces données dans une «&nbsp;variable commune&nbsp;». Ainsi, pour accéder
+à ces valeurs il suffit de parcourir la variable de type complexe composée
+de «&nbsp;variables&nbsp;» de type simple.
+
+</p><p align="justify">Le langage C propose deux types de structures&nbsp;:
+</p><ul>
+<li><b>les tableaux</b>, permettant de stocker plusieurs données de même type</li>
+<li><b>les structures</b>, pouvant contenir des données hétérogènes</li>
+</ul>
+
+<a name="tableau" class="ancre"></a><h2>La notion de tableau</h2>
+
+<p align="justify">On appelle <i>tableau</i> une variable composée de données de même type,
+stockée de manière contiguë en mémoire (les unes à la suite des autres).
+
+</p><p align="justify">Un tableau est donc une suite de cases (espace mémoire) de même taille. La taille
+de chacune des cases est conditionnée par le type de donnée que le tableau contient.
+
+<br>Les éléments du tableau peuvent être&nbsp;:
+</p><ul>
+<li>des données de type simple : int, char, float, long, double...
+
+<br>(la taille d'une case du tableau est alors le nombre d'octets sur lequel la donnée est codée)</li>
+<li>des pointeurs (objets contenant une adresse mémoire. Ce type d'entité sera expliqué dans les chapitres suivants)</li>
+<li>des tableaux</li>
+<li>des structures</li>
+</ul>
+
+
+<p align="justify">Voici donc une manière de représenter un tableau&nbsp;:
+
+</p><p align="justify">
+<table border="1" cellspacing="0">
+<tbody><tr><td>donnée</td><td>donnée</td><td>donnée</td><td border="0">...</td><td>donnée</td><td>donnée</td><td>donnée</td>
+</tr>
+</tbody></table>
+</p><ul>
+<li>Lorsque le tableau est composé de données de type simple, on parle de <i>tableau monodimensionnel</i> (ou <i>vecteur</i>)
+</li><li>Lorsque celui-ci contient lui-même d'autres tableaux on parle alors de <i>tableaux multidimensionnels</i> (aussi <i>matrice</i> ou <i>table</i>)
+</li></ul>
+
+<a name="unidimensionnel" class="ancre"></a><h2>Les tableaux unidimensionnels</h2>
+
+<p align="justify">
+
+<a name="declaration" class="ancre"></a></p><h3>Déclaration</h3>
+
+<p align="justify">Un tableau unidimensionnel est un tableau qui contient des éléments simples
+(des éléments qui ne sont pas des tableaux). Un tableau unidimensionnel est
+donc une suite de «&nbsp;cases&nbsp;» de même taille contenant des éléments
+d'un type donné (de la longueur de la case en quelque sorte).
+
+<br>Un tableau contenant des entiers peut se représenter de la façon suivante&nbsp;:
+
+</p><p align="justify">
+<table border="1" cellspacing="0">
+<tbody><tr><td>int</td><td>int</td><td>int</td><td border="0">...</td><td>int</td><td>int</td><td>int</td>
+</tr>
+</tbody></table>
+
+
+</p><p align="justify">En langage C, la syntaxe de la définition d'un tableau unidimensionnel est la suivante&nbsp;:
+
+</p><p align="justify"></p><pre class="Code">type Nom_du_tableau [Nombre d'éléments]</pre>
+<ul>
+<li><i>type</i> définit le type d'élément que contient le tableau (rappel : un tableau
+en langage C est composé uniquement d'éléments de même type), c'est-à-dire
+qu'il définit la taille d'une case du tableau en mémoire</li>
+<li><i>Nom_du_tableau</i> est le nom que l'on décide de donner au tableau, le nom du tableau suit les mêmes
+règles qu'un nom de variable</li>
+<li><i>Nombre d'éléments</i> est un nombre entier qui détermine le nombre de cases que le tableau
+doit comporter</li>
+</ul>
+
+
+<p align="justify">Voici par exemple la définition d'un tableau qui doit contenir 8 éléments de type char&nbsp;:
+
+</p><pre class="Code">char Tableau [8]</pre>
+
+
+<a name="taille" class="ancre"></a><h3>Calcul de la taille du tableau</h3>
+
+<p align="justify">Etant donné qu'un tableau est composé d'un nombre fixé d'éléments d'un type donné,
+la taille d'un tableau est déterminée dès sa définition.
+
+</p><p align="justify">Pour connaître la taille d'un tableau, c'est-à-dire déterminer le nombre d'octets que celui-ci occupe en mémoire,
+il y a deux possibilités&nbsp;:
+</p><ul>
+<li><b>Calculer manuellement la taille du tableau</b> : il suffit de multiplier la taille du type d'élément
+par le nombre d'éléments qui composent le tableau</li>
+<li><b>Utiliser l'opérateur <i>sizeof()</i></b> : l'opérateur <i>sizeof()</i> permet
+de retourner directement la taille de l'élément qui lui est passé en argument, ainsi
+en lui passant un tableau comme opérande, <i>sizeof()</i> est capable de vous retourner directement la taille
+de celui-ci</li>
+</ul>
+
+
+<p align="justify">Voici différents exemples de tableaux, et leurs tailles respectives&nbsp;:
+
+</p><p align="justify">
+<table class="ccm" cellspacing="0" cellpadding="1" width="550">
+<tbody><tr>
+<th>Définition du tableau</th>
+<th>Taille du tableau (en octets)</th>
+</tr>
+<tr>
+<td>char Tableau1[12]</td>
+<td>1 * 12 = 12</td>
+</tr>
+<tr>
+<td>int Tableau2[10]</td>
+<td>2 * 10 = 20</td>
+</tr>
+<tr>
+<td>float Tableau3[8]</td>
+<td>4 * 8 = 32</td>
+</tr>
+<tr>
+<td>double Tableau4[15]</td>
+<td>8 * 15 = 120</td>
+</tr>
+</tbody></table>
+
+
+<a name="acceder" class="ancre"></a></p><h3>Accéder aux éléments</h3>
+
+<p align="justify">Pour accéder à un élément du tableau, le nom que l'on a donné à
+
+celui-ci ne suffit pas car il comporte plusieurs éléments. Ainsi, on définit un nombre
+appelé <b>indice</b> (en anglais <i>index</i>) qui, combiné avec le nom du tableau, permet
+de décrire exactement chaque élément.
+
+</p><p align="justify">Pour accéder à un élément du tableau, il suffit donc de donner le nom
+du tableau, suivi de l'indice de l'élément entre crochets&nbsp;:
+
+</p><pre class="Code"> Nom_du_tableau[<i>indice</i>]</pre>
+
+
+<p align="justify">
+<table border="0">
+<tbody><tr>
+<td>
+
+<img src="Langage%20C%20-%20Les%20tableaux_fichiers/warning.gif"></td>
+<td>
+<ul><li>L'indice du premier élément du tableau est <b>0</b></li>
+<li>Un indice est toujours positif</li>
+<li>L'indice du dernier élément du tableau est égal au nombre d'éléments - 1</li>
+</ul></td>
+</tr>
+</tbody></table>
+
+Ainsi, on accédera au 5<sup>ème</sup> élément du tableau en écrivant&nbsp;:
+
+</p><pre class="Code"> Nom_du_tableau[<i>4</i>]</pre>
+
+
+<a name="manipuler" class="ancre"></a><h3>Manipuler les éléments</h3>
+
+<p align="justify">Un élément du tableau (repéré par le nom du tableau et son indice)
+peut être manipulé exactement comme une variable, on peut donc effectuer des opérations
+avec (ou sur) des éléments de tableau.
+
+</p><p align="justify">Définissons un tableau de 10 entiers&nbsp;:
+
+</p><pre class="Code"> int Toto[<i>10</i>];</pre>
+
+<p align="justify">Pour affecter la valeur 6 au huitième élément on écrira&nbsp;:
+
+</p><pre class="Code"> Toto[<i>7</i>] = 6;</pre>
+
+<p align="justify">Pour affecter au 10<sup>ème</sup> élément le résultat de l'addition des éléments 1 et 2, on écrira&nbsp;:
+
+</p><pre class="Code"> Toto[<i>9</i>] = Toto[<i>0</i>] + Toto[<i>1</i>];</pre>
+
+
+
+
+<a name="initialiser" class="ancre"></a><h3>Initialiser les éléments</h3>
+
+<p align="justify">Lorsque l'on définit un tableau, les valeurs des éléments qu'il contient
+ne sont pas définies, il faut donc les initialiser, c'est-à-dire leur affecter une valeur.
+
+<br>Une méthode rustique consiste à affecter des valeurs aux éléments un par un&nbsp;:
+
+</p><pre class="Code"> Toto[<i>0</i>] = Toto[<i>1</i>] = Toto[<i>2</i>] = 0;</pre>
+
+<p align="justify">L'intérêt de l'utilisation d'un tableau est alors bien maigre...
+
+</p><p align="justify">Une manière plus élégante consiste à utiliser le fait que pour passer d'un
+élément du tableau à l'élément suivant il suffit d'incrémenter
+son indice. Il est donc possible d'utiliser une boucle qui va permettre d'initialiser successivement
+chacun des éléments grâce à un compteur qui servira d'indice&nbsp;:
+
+</p><pre class="Code"> int Toto[<i>10</i>];
+
+int Indice;
+
+for (Indice = 0; Indice &lt;= 9; Indice++) {
+Toto[Indice] = 0;
+
+}</pre>
+
+
+<p align="justify">Cette méthode, aussi utile soit elle, n'a d'intérêt que lorsque les éléments
+du tableau doivent être initialisés à une valeur unique ou une valeur logique (proportionnelle
+à l'indice par exemple). Pour initialiser un tableau avec des valeurs spécifiques, il est possible
+d'initialiser le tableau à la définition en plaçant entre accolades les valeurs, séparées
+par des virgules&nbsp;:
+
+</p><pre class="Code"> int Toto[<i>10</i>] = {1, 2, 6, 5, 2, 1, 9, 8, 1, 5};</pre>
+
+
+<p align="justify">
+<table border="0">
+<tbody><tr>
+<td>
+
+<img src="Langage%20C%20-%20Les%20tableaux_fichiers/warning.gif"></td>
+<td>
+<ul><li>Le nombre de valeurs entre accolades ne doit pas être supérieur au nombre d'éléments du tableau</li>
+<li>Les valeurs entre accolades doivent être des constantes (l'utilisation de variables provoquera une erreur du compilateur)</li>
+<li>Si le nombre de valeurs entre accolades est inférieur au nombre 
+d'éléments du tableau, les derniers éléments sont initialisés à 0</li>
+<li>Il doit y avoir au moins une valeur entre accolades</li>
+</ul></td>
+</tr>
+</tbody></table>
+
+Ainsi, l'instruction suivante permet d'initialiser tous les éléments du tableau à zéro&nbsp;:
+
+</p><pre class="Code"> int Toto[<i>10</i>] = {0};</pre>
+
+
+<p align="justify">Il est conseillé d'employer le plus possible des constantes dans vos programmes, notamment
+pour la taille des tableaux. Le code ci-dessus peut s'écrire ainsi&nbsp;:
+
+</p><pre class="Code">#define NB_ELEMENT_TOTO 10
+int Toto[NB_ELEMENT_TOTO];
+int Indice;
+for (Indice = 0; Indice &lt; NB_ELEMENT_TOTO; Indice++) {
+Toto[Indice] = 0;
+} </pre>
+
+
+<p align="justify">Voici les avantages liés à l'utilisation de constantes :
+</p><ul>
+<li>Moins d'erreurs d'exécution dues à un débordement difficile à déceler. </li>
+<li>Pour modifier la taille du tableau il suffit de changer le define en début du code source.
+</li><li>Le code possède une lisibilité accrue.
+</li></ul>
+
+
+<a name="multidimensionnel" class="ancre"></a><h2>Les tableaux multidimensionnels</h2>
+
+<p align="justify">Les tableaux multidimensionnels sont des tableaux qui contiennent des tableaux.
+
+</p><p align="justify">Par exemple le tableau bidimensionnel (3 lignes, 4 colonnes) suivant, est en fait
+un tableau comportant 3 éléments, chacun d'entre eux étant un tableau
+de 4 éléments&nbsp;:
+
+</p><p align="justify">
+<table border="0">
+<tbody><tr>
+<td>
+
+<p align="justify"><table border="1" cellspacing="0">
+<tbody><tr>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+</tr>
+<tr>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+</tr>
+<tr>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+<td width="20">&nbsp;</td>
+</tr>
+</tbody></table></p></td>
+<td width="200">est stocké en mémoire de la manière suivante :</td>
+<td>
+<table border="1" cellspacing="0">
+<tbody><tr>
+<td><table border="1" cellspacing="0"><tbody><tr><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td></tr></tbody></table></td>
+<td><table border="1" cellspacing="0"><tbody><tr><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td></tr></tbody></table></td>
+<td><table border="1" cellspacing="0"><tbody><tr><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td><td width="20">&nbsp;</td></tr></tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr></tbody></table>
+
+
+<a name="definition" class="ancre"></a></p><h3>Définition</h3>
+
+<p align="justify">Un tableau multidimensionnel se définit de la manière suivante&nbsp;:
+
+</p><pre class="Code"> <i>type</i> Nom_du_tableau [a1][a2][a3] ... [aN]</pre>
+<ul>
+<li>Chaque élément entre crochets désigne le nombre d'éléments dans chaque dimension</li>
+<li>Le nombre de dimensions n'est pas limité
+</li></ul>
+
+
+<p align="justify">Un tableau d'entiers positifs à deux dimensions (3 lignes, 4 colonnes) se définira avec la syntaxe suivante&nbsp;:
+
+</p><pre class="Code"> <i>int</i> Tableau [3][4]</pre>
+
+
+<p align="justify">On peut représenter un tel tableau de la manière suivante&nbsp;:
+
+</p><p align="justify"><table border="1" cellspacing="0">
+<tbody><tr>
+<td>Tableau[0][0]</td>
+<td>Tableau[0][1]</td>
+<td>Tableau[0][2]</td>
+<td>Tableau[0][3]</td>
+</tr>
+<tr>
+<td>Tableau[1][0]</td>
+<td>Tableau[1][1]</td>
+<td>Tableau[1][2]</td>
+<td>Tableau[1][3]</td>
+</tr>
+<tr>
+<td>Tableau[2][0]</td>
+<td>Tableau[2][1]</td>
+<td>Tableau[2][2]</td>
+<td>Tableau[2][3]</td>
+</tr>
+</tbody></table>
+
+
+</p><p align="justify">Il va de soi que cette représentation est arbitraire, car elle suppose que le premier
+indice est l'indice de ligne, et le second est l'indice de colonne.
+
+<br>On aurait tout aussi bien pu représenter le tableau de la manière suivante&nbsp;:
+
+</p><p align="justify"><table border="1" cellspacing="0">
+<tbody><tr>
+<td>Tableau[0][0]</td>
+<td>Tableau[1][0]</td>
+<td>Tableau[2][0]</td>
+</tr>
+<tr>
+<td>Tableau[0][1]</td>
+<td>Tableau[1][1]</td>
+<td>Tableau[2][1]</td>
+</tr>
+<tr>
+<td>Tableau[0][2]</td>
+<td>Tableau[1][2]</td>
+<td>Tableau[2][2]</td>
+</tr>
+<tr>
+<td>Tableau[0][3]</td>
+<td>Tableau[1][3]</td>
+<td>Tableau[2][3]
+</td></tr>
+</tbody></table>
+
+</p><p align="justify">On utilise toutefois généralement la première représentation, car elle correspond mieux
+à la façon selon laquelle le tableau est stocké en mémoire.
+
+<a name="initialiser" class="ancre"></a></p><h3>Initialiser les éléments</h3>
+
+<p align="justify">L'initialisation d'un tableau multidimensionnel se fait à peu près de la même
+façon que pour les tableaux unidimensionnels. Il y a donc plusieurs façons d'initialiser
+un tableau multidimensionnel&nbsp;:
+</p><ul>
+<li><b>Initialisation individuelle de chaque élément</b>&nbsp;:
+
+<pre class="Code">Nom_du_tableau [0][0] = 2;
+
+Nom_du_tableau [0][1] = 3;
+
+...</pre></li>
+<li><b>Initialisation grâce à des boucles</b>&nbsp;:
+
+<br>Il faut faire des boucles imbriquées correspondant chacune à un indice d'une dimension. Par exemple
+les éléments de Tableau[3][4] pourront être initialisés à 0 par les instructions suivantes&nbsp;:
+
+<br><pre class="Code">int i,j;
+
+for (i=0; i&lt;=2; i++){
+	for (j=0; j&lt;=3; j++){
+		Tableau[i][j] = 0;
+
+	}
+}</pre></li>
+<li><b>Initialisation à la définition</b>&nbsp;:
+
+<pre class="Code"><i>type</i> Nom_du_tableau [Taille1][Taille2]...[TailleN] = {a1, a2, ... aN};</pre>
+
+<br>Les valeurs sont attribuées aux éléments successifs en incrémentant d'abord les indices de droite,
+c'est-à-dire pour un tableau à 2 dimensions : [0][0], [0][1], [0][2] ... puis [1][0] etc.</li>
+<li><b>Initialisation grâce à la fonction <i>memset</i></b>&nbsp;:
+
+<pre class="Code">int toto[10];
+/* Met à zéro toute la zone mémoire */
+memset(*toto, 0, sizeof(toto));
+Synopsis de la fonction memset :
+#include &lt;string.h&gt;
+void * memset ( void * buffer, int c, size_t num ); </pre>
+</li>
+</ul>
+
+<h2 id="discus_sim">Discussions pertinentes trouvées dans le forum</h2><table class="simili"><tbody><tr class="sb">
+<td><span class="Dategris">14/11&nbsp;16h12</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1916257-html-debordement-de-span-tableaux#2005-11-15%2012%3A28%3A20"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="html débordement span tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-1916257-html-debordement-de-span-tableaux">&nbsp;HTML débordement de SPAN / tableaux</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">15/11&nbsp;12h28</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1916257-html-debordement-de-span-tableaux#2005-11-15%2012%3A28%3A20">Yorgat</a></td><td style="text-align:center"><span class="Texte">10</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">20/04&nbsp;15h15</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1456247-tableaux-croises-excel#2007-02-15%2010%3A34%3A06"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="tableaux croisés excel"></a><a href="http://www.commentcamarche.net/forum/affich-1456247-tableaux-croises-excel">&nbsp;tableaux croisés excel</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-1-logiciels-pilotes">Logiciels/Pilotes</a></td>
+<td><span class="Date">15/02&nbsp;10h34</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-1456247-tableaux-croises-excel#2007-02-15%2010%3A34%3A06">n28akira</a></td><td style="text-align:center"><span class="Texte">4</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">21/07&nbsp;09h48</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1683796-php-petite-question-sur-les-tableaux#2005-07-21%2013%3A56%3A56"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="php tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-1683796-php-petite-question-sur-les-tableaux">&nbsp;[Php] petite question sur les tableaux</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">21/07&nbsp;13h56</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1683796-php-petite-question-sur-les-tableaux#2005-07-21%2013%3A56%3A56">Padoo</a></td><td style="text-align:center"><span class="Texte">3</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Date">11/01&nbsp;12h25</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2583172-xslt-boucles-et-tableaux#2007-01-11%2018%3A39%3A36"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="xslt boucles tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-2583172-xslt-boucles-et-tableaux">&nbsp;[XSLT] Boucles et tableaux...</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">11/01&nbsp;18h39</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2583172-xslt-boucles-et-tableaux#2007-01-11%2018%3A39%3A36">Reivax962</a></td><td style="text-align:center"><span class="Texte">2</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">15/10&nbsp;11h01</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1853725-problemes-de-tableaux-en-html#2005-10-15%2013%3A47%3A14"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="tableaux html"></a><a href="http://www.commentcamarche.net/forum/affich-1853725-problemes-de-tableaux-en-html">&nbsp;Problèmes de tableaux en HTML</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-10-internet">Internet</a></td>
+<td><span class="Date">15/10&nbsp;13h47</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-1853725-problemes-de-tableaux-en-html#2005-10-15%2013%3A47%3A14">Alasea</a></td><td style="text-align:center"><span class="Texte">1</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">30/03&nbsp;10h30</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2170312-php-comparer-2-tableaux#2006-03-30%2010%3A33%3A30"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" border="0" alt="php comparer 2 tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-2170312-php-comparer-2-tableaux">&nbsp;[php] comparer 2 tableaux</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">30/03&nbsp;10h33</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2170312-php-comparer-2-tableaux#2006-03-30%2010%3A33%3A30">kilian</a></td><td style="text-align:center"><span class="Texte">1</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">19/11&nbsp;15h43</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1926724-tableaux#2005-11-21%2022%3A18%3A30"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carre.gif" border="0" alt="tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-1926724-tableaux">&nbsp;tableaux</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">21/11&nbsp;22h18</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-1926724-tableaux#2005-11-21%2022%3A18%3A30">johan</a></td><td style="text-align:center"><span class="Texte">21</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">11/11&nbsp;22h03</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1910952-les-tableaux-en-c#2005-11-13%2016%3A28%3A51"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carre.gif" border="0" alt="tableaux"></a><a href="http://www.commentcamarche.net/forum/affich-1910952-les-tableaux-en-c">&nbsp;les tableaux en C</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">13/11&nbsp;16h28</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1910952-les-tableaux-en-c#2005-11-13%2016%3A28%3A51">lami20j</a></td><td style="text-align:center"><span class="Texte">17</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">15/05&nbsp;22h32</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1523203-c-tableaux-de-pointeurs#2005-05-16%2000%3A44%3A34"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carre.gif" border="0" alt="tableaux pointeurs"></a><a href="http://www.commentcamarche.net/forum/affich-1523203-c-tableaux-de-pointeurs">&nbsp;[C] tableaux de pointeurs</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">16/05&nbsp;00h44</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1523203-c-tableaux-de-pointeurs#2005-05-16%2000%3A44%3A34">Luffy&nbsp;=)</a></td><td style="text-align:center"><span class="Texte">14</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">24/05&nbsp;21h16</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1546902-probleme-c-tableaux-et-classes#2005-05-30%2011%3A20%3A59"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carre.gif" border="0" alt="tableaux classes"></a><a href="http://www.commentcamarche.net/forum/affich-1546902-probleme-c-tableaux-et-classes">&nbsp;Problème C++ : tableaux et classes</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">30/05&nbsp;11h20</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1546902-probleme-c-tableaux-et-classes#2005-05-30%2011%3A20%3A59">Char&nbsp;Snipeur</a></td><td style="text-align:center"><span class="Texte">14</span></td>
+</tr>
+	<tr class="sa">
+	<td colspan="2"><span class="Texte"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/carreblock.gif" width="12" alt="" title="Discussion fermée">Discussion fermée
+    <img src="Langage%20C%20-%20Les%20tableaux_fichiers/carrevalid.png" width="12" alt="" title="Problème résolu">Problème résolu</span></td>
+	<td style="vertical-align:top;text-align:right;" colspan="3"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/plus.png" alt="Tableaux C" border="0"> Plus de discussions sur «&nbsp;<a href="http://www.commentcamarche.net/f/tableaux-c"><b>Tableaux C</b></a>&nbsp;»</td></tr></tbody></table>
+<br><span class="Footer">Ce document intitulé «&nbsp;<a href="http://www.commentcamarche.net/c/ctab.php3">Langage C - Les tableaux</a>&nbsp;» issu de l'<a href="http://www.commentcamarche.net/encyclopedie/">encyclopédie</a> <a href="http://www.commentcamarche.net/informatique/informatique.php3">informatique</a> <a href="http://www.commentcamarche.net/">Comment Ça Marche</a> (<a href="http://www.commentcamarche.net/">www.commentcamarche.net</a>) est mis à disposition sous les termes de la licence <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/ccmlicence.htm">Creative Commons</a>.
+Vous pouvez copier, modifier des copies de cette page, dans les 
+conditions fixées par la licence, tant que cette note apparaît 
+clairement.</span>
+<br>&nbsp;
+<center><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/c/cfonc.htm"><img src="Langage%20C%20-%20Les%20tableaux_fichiers/bckward.gif" border="0" width="38" height="63" alt=""></a>
+</center>
+</div>
+
+</td>
+</tr>
+
+<tr><th colspan="4" style="background-color:#CED7F6">&nbsp;</th></tr>
+</tbody></table>
+<div id="footer"><br><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/ccmintro.htm"><b>A propos</b></a> | <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/cgu-conditions-generales.htm"><b>Conditions générales</b></a>  | © Tous droits réservés 2007 <a href="http://www.commentcamarche.net/">Quidéa</a>
+</div>
+
+</body></html>
